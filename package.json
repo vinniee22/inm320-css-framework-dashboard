@@ -1,0 +1,11 @@
+{
+  "name": "css-framework-dashboard",
+  "version": "1.0.0",
+  "description": "INM320 CSS Framework assignment: Bootstrap dashboard",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

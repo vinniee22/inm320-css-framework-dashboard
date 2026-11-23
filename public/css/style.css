@@ -1,0 +1,408 @@
+/* purity ui dashboard styles: mobile first, then min-width media queries */
+
+/* ---------- variables ---------- */
+:root {
+  --teal: #4fd1c5;
+  --navy: #2d3748;
+  --gray: #a0aec0;
+  --green: #38b27a;
+  --red: #e53e3e;
+  --page-bg: #f8f9fa;
+}
+
+/* ---------- base (mobile) ---------- */
+body {
+  background-color: var(--page-bg);
+  color: var(--navy);
+}
+
+.up { color: var(--green); font-weight: 700; }
+.down { color: var(--red); font-weight: 700; }
+.text-teal { color: var(--teal); }
+.text-purple { color: #805ad5; }
+
+/* sidebar: bootstrap .collapse hides it on mobile, the menu button toggles it */
+.sidebar {
+  padding: 1rem;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sidebar-brand .bi {
+  font-size: 1.5rem;
+}
+
+.sidebar-heading {
+  margin: 1.25rem 0.75rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 1rem;
+  color: var(--gray);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sidebar-link.active {
+  background-color: #ffffff;
+  color: var(--navy);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* round icon box: white with teal icon, teal with white icon when active */
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  color: var(--teal);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-link.active .icon-box {
+  background-color: var(--teal);
+  color: #ffffff;
+}
+
+/* header */
+.topbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+}
+
+.search-box .bi {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+}
+
+.search-box input {
+  padding-left: 2.25rem;
+  border-radius: 1rem;
+}
+
+.topbar-link {
+  color: var(--gray);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* main content */
+.content {
+  padding: 0 1rem 1rem;
+}
+
+.card {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.card-heading {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.card-sub {
+  margin: 0.25rem 0 1rem;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* stat cards: text on the left, teal icon on the right */
+.stat-card .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-label {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.stat-value span {
+  font-size: 0.8rem;
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  background-color: var(--teal);
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+/* sales overview chart image */
+.chart-image {
+  width: 100%;
+  height: auto;
+}
+
+/* active users: dark panel with white bars */
+.bar-panel {
+  display: flex;
+  gap: 0.5rem;
+  height: 220px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #2d3253, #111322);
+}
+
+.bar-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.bars {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.bar {
+  width: 6px;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+/* bar heights as a percentage of the 0 to 500 axis */
+.h-24 { height: 24%; }
+.h-32 { height: 32%; }
+.h-47 { height: 47%; }
+.h-59 { height: 59%; }
+.h-66 { height: 66%; }
+.h-85 { height: 85%; }
+.h-97 { height: 97%; }
+.h-100 { height: 100%; }
+
+/* mini stats under the bar chart */
+.mini-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.mini-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.4rem;
+  background-color: var(--teal);
+  color: #ffffff;
+  font-size: 0.7rem;
+}
+
+.mini-value {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* progress bars (bootstrap component, teal color, width classes) */
+.progress {
+  height: 4px;
+}
+
+.progress-bar {
+  background-color: var(--teal);
+}
+
+.pct-10 { width: 10%; }
+.pct-25 { width: 25%; }
+.pct-40 { width: 40%; }
+.pct-60 { width: 60%; }
+.pct-85 { width: 85%; }
+.pct-100 { width: 100%; }
+
+/* projects table */
+.project-table {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.project-table th {
+  color: var(--gray);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.project-table .progress {
+  width: 120px;
+}
+
+.done {
+  font-size: 0.8rem;
+}
+
+.logo-xd { color: #ff61f6; }
+.logo-blue { color: #2b6cb0; }
+.logo-slack { color: #e01e5a; }
+.logo-green { color: #1db954; }
+.logo-red { color: #e53e5a; }
+
+/* overlapping member avatars drawn with css */
+.avatars {
+  display: inline-flex;
+}
+
+.avatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: -0.4rem;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.av-1 { background-color: #2d3748; }
+.av-2 { background-color: #9f7aea; }
+.av-3 { background-color: #ed64a6; }
+.av-4 { background-color: #4299e1; }
+.av-5 { background-color: #ed8936; }
+
+/* orders overview timeline */
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.timeline li .bi {
+  grid-row: span 2;
+}
+
+.timeline small {
+  color: var(--gray);
+  font-weight: 700;
+}
+
+/* modal submit button */
+.btn-teal {
+  background-color: var(--teal);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.site-footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ---------- tablet and up ---------- */
+@media (min-width: 768px) {
+  .topbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-box {
+    flex: none;
+    width: 220px;
+  }
+
+  .content {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+/* ---------- desktop and up ---------- */
+@media (min-width: 992px) {
+  /* sidebar becomes a fixed column and the menu button disappears */
+  .sidebar {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    overflow-y: auto;
+  }
+
+  .main-wrapper {
+    margin-left: 250px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+}
+
+/* keep company names on one line inside the scrollable table */
+.project-table td {
+  white-space: nowrap;
+}
