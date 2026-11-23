@@ -192,14 +192,14 @@
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                           <button class="dropdown-item" type="button"
-                                  data-bs-toggle="modal" data-bs-target="#projectModal">new project</button>
+                                  data-bs-toggle="modal" data-bs-target="#project-modal">new project</button>
                         </li>
                       </ul>
                     </div>
                   </div>
 
                   <div class="table-responsive">
-                    <table class="table align-middle project-table" id="projectTable">
+                    <table class="table align-middle project-table" id="project-table">
                       <thead>
                         <tr><th>companies</th><th>members</th><th>budget</th><th>completion</th></tr>
                       </thead>
@@ -273,20 +273,20 @@
     </div>
 
     <!-- modal with a form: advanced bootstrap component -->
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal fade" id="project-modal" tabindex="-1" aria-labelledby="project-modal-label" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <form class="modal-content" id="projectForm">
+        <form class="modal-content" id="project-form">
           <div class="modal-header">
-            <h2 class="modal-title h5" id="projectModalLabel">New project</h2>
+            <h2 class="modal-title h5" id="project-modal-label">New project</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
           </div>
           <div class="modal-body">
-            <label class="form-label" for="projectName">Project name</label>
-            <input class="form-control mb-3" id="projectName" type="text" required>
-            <label class="form-label" for="projectBudget">Budget</label>
-            <input class="form-control mb-3" id="projectBudget" type="text" placeholder="$0">
-            <label class="form-label" for="projectDone">Completion (%)</label>
-            <input class="form-range" id="projectDone" type="range" min="0" max="100" value="0">
+            <label class="form-label" for="project-name">Project name</label>
+            <input class="form-control mb-3" id="project-name" type="text" required>
+            <label class="form-label" for="project-budget">Budget</label>
+            <input class="form-control mb-3" id="project-budget" type="text" placeholder="$0">
+            <label class="form-label" for="project-done">Completion (%)</label>
+            <input class="form-range" id="project-done" type="range" min="0" max="100" value="0">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>

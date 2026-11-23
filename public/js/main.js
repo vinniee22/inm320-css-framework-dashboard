@@ -1,15 +1,15 @@
 // dashboard script: adds a new row to the projects table from the modal form
 
-var form = document.getElementById('projectForm');
-var tableBody = document.querySelector('#projectTable tbody');
+var form = document.getElementById('project-form');
+var tableBody = document.querySelector('#project-table tbody');
 
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 
   // read the form values
-  var name = document.getElementById('projectName').value;
-  var budget = document.getElementById('projectBudget').value || 'Not set';
-  var done = document.getElementById('projectDone').value;
+  var name = document.getElementById('project-name').value;
+  var budget = document.getElementById('project-budget').value || 'Not set';
+  var done = document.getElementById('project-done').value;
 
   // build the new table row (members cell stays empty)
   var row = document.createElement('tr');
@@ -26,5 +26,5 @@ form.addEventListener('submit', function (event) {
 
   // reset the form and close the modal
   form.reset();
-  bootstrap.Modal.getInstance(document.getElementById('projectModal')).hide();
+  bootstrap.Modal.getInstance(document.getElementById('project-modal')).hide();
 });
